@@ -269,8 +269,10 @@
             
             main.forEach(m => {
                 const profilePic = m.photo || `https://ui-avatars.com/api/?name=${encodeURIComponent(m.name)}&background=022c22&color=fbbf24`;
+                // Safely escape member name for JS function call
+                const safeName = m.name.replace(/'/g, "\\'").replace(/"/g, '&quot;');
                 htmlContent += `
-                    <div onclick="triggerVibrate(30); showHistory('${m.name}')" class="member-item p-2.5 rounded-xl sm:rounded-2xl flex items-center gap-2.5 cursor-pointer group min-w-0">
+                    <div onclick="triggerVibrate(30); showHistory('${safeName}')" class="member-item p-2.5 rounded-xl sm:rounded-2xl flex items-center gap-2.5 cursor-pointer group min-w-0">
                         <img src="${profilePic}" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover ring-2 ring-amber-500/40 group-hover:ring-amber-400 transition-all duration-300 shrink-0">
                         <div class="overflow-hidden min-w-0">
                             <p class="text-[10px] font-bold text-slate-100 uppercase tracking-wide truncate group-hover:text-amber-300 transition-colors">${m.name}</p>
@@ -299,9 +301,10 @@
         });
 
         function showHistory(name) {
+            const cleanSearchName = name.toString().trim().toLowerCase();
             const memberHistory = historyData.filter(row => {
                 const values = Object.values(row);
-                return values[0] && values[0].toString().trim() === name.trim();
+                return values[0] && values[0].toString().trim().toLowerCase() === cleanSearchName;
             });
             
             const container = document.getElementById('history-data');
