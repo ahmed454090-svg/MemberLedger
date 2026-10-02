@@ -173,23 +173,8 @@
 </head>
 <body class="pb-8 relative antialiased selection:bg-amber-500 selection:text-black bg-ramzan-sky">
 
-    <!-- Header with Moon, Stars & Mosque Silhouette Watermark -->
+    <!-- Header with Moon & Stars Background Style -->
     <header class="ramzan-header p-6 sm:p-8 pb-16 sm:pb-20 text-white rounded-b-[2rem] sm:rounded-b-[2.5rem] shadow-2xl text-center relative z-10 border-b border-amber-500/30">
-        <!-- Mosque Minaret and Dome Silhouette Watermark Background -->
-        <div class="absolute bottom-0 inset-x-0 h-16 opacity-15 pointer-events-none flex justify-center items-end overflow-hidden z-0">
-            <svg viewBox="0 0 600 120" class="w-full h-full fill-current text-amber-300">
-                <!-- Left Minaret -->
-                <path d="M100,120 L100,40 L105,40 L105,30 L110,30 L110,40 L115,40 L115,120 Z" />
-                <circle cx="107.5" cy="27" r="3" />
-                <!-- Center Main Dome & Structure -->
-                <path d="M240,120 L240,60 C240,30 265,10 300,10 C335,10 360,30 360,60 L360,120 Z" />
-                <path d="M280,10 C280,3 285,0 300,0 C315,0 320,3 320,10 Z" />
-                <!-- Right Minaret -->
-                <path d="M485,120 L485,40 L490,40 L490,30 L495,30 L495,40 L500,40 L500,120 Z" />
-                <circle cx="492.5" cy="27" r="3" />
-            </svg>
-        </div>
-
         <div class="inline-flex items-center gap-2 mb-2 px-3.5 py-1 rounded-full bg-emerald-950/90 border border-amber-500/40 text-[10px] font-mono tracking-widest text-amber-300 uppercase shadow-inner relative z-10">
             <span class="pulse-dot"></span> Ramzan-ul-Mubarak Edition
         </div>
@@ -217,8 +202,7 @@
                 <h3 class="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-300/80">Members List</h3>
                 <span class="text-[9px] font-semibold text-emerald-300/60 uppercase tracking-wider">Tap for history</span>
             </div>
-            <!-- Members List & Notice Card Container -->
-            <div id="members-list" class="scroll-container grid grid-cols-2 gap-2.5 sm:gap-3 max-h-[320px] sm:max-h-[380px] overflow-y-auto p-2.5 sm:p-3 rounded-2xl sm:rounded-3xl backdrop-blur-xl"></div>
+            <div id="members-list" class="scroll-container grid grid-cols-2 gap-2.5 sm:gap-3 max-h-[300px] sm:max-h-[360px] overflow-y-auto p-2.5 sm:p-3 rounded-2xl sm:rounded-3xl backdrop-blur-xl"></div>
         </section>
 
         <!-- History Modal -->
@@ -232,6 +216,18 @@
                 </div>
                 <div id="history-data" class="space-y-2 overflow-y-auto pr-1"></div>
             </div>
+        </div>
+
+        <div class="notice-card p-4 sm:p-5 rounded-2xl sm:rounded-3xl">
+            <div class="flex items-center gap-2 mb-1.5">
+                <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-amber-500/20 flex items-center justify-center border border-amber-500/50 shrink-0 shadow-inner">
+                    <i class="fas fa-bell text-amber-300 text-[9px] sm:text-[10px]"></i>
+                </div>
+                <h4 class="font-bold uppercase tracking-widest text-xs text-amber-300">Important Notice</h4>
+            </div>
+            <p class="text-xs leading-relaxed text-slate-200 opacity-95 font-medium dir-rtl text-right">
+                تمام بھائیوں سے گزارش ہے کہ ہر مہینے کی 10 تاریخ تک اپنی پیمنٹ جمع کروا دیا کریں، تاکہ نہ سسٹم میں رکاوٹ آئے اور نہ ہی آپ پر بوجھ بڑھے۔ شکریہ۔
+            </p>
         </div>
 
         <div class="text-center opacity-60 text-[9px] font-bold uppercase tracking-[0.25em] pt-2 text-emerald-300 font-mono">
@@ -248,7 +244,7 @@
         }
 
         const mainSheet = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTtsZyNI2Ss1ACTIO7X1zAND4Q-mGhFdKSVcvx8amNxfGsFQfA2A7kBLHJgTJ9DGECqNNZ40iHW7zDc/pub?output=csv';
-        const historySheet = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTtsZyNI2Ss1ACTIO7X1zAND4Q-mGhFdKSVcvx8amNxfGsFQfA2A7kBLHJgTJ9DGECqNNZ40iHW7zDc/gid=2038080316&single=true&output=csv';
+        const historySheet = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTtsZyNI2Ss1ACTIO7X1zAND4Q-mGhFdKSVcvx8amNxfGsFQfA2A7kBLHJgTJ9DGECqNNZ40iHW7zDc/pub?gid=2038080316&single=true&output=csv';
         
         let historyData = [];
 
@@ -265,11 +261,9 @@
             document.getElementById('last-updated').innerText = "Last Updated: " + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
             const list = document.getElementById('members-list');
-            let htmlContent = "";
-            
             main.forEach(m => {
                 const profilePic = m.photo || `https://ui-avatars.com/api/?name=${encodeURIComponent(m.name)}&background=022c22&color=fbbf24`;
-                htmlContent += `
+                list.innerHTML += `
                     <div onclick="triggerVibrate(30); showHistory('${m.name}')" class="member-item p-2.5 rounded-xl sm:rounded-2xl flex items-center gap-2.5 cursor-pointer group min-w-0">
                         <img src="${profilePic}" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover ring-2 ring-amber-500/40 group-hover:ring-amber-400 transition-all duration-300 shrink-0">
                         <div class="overflow-hidden min-w-0">
@@ -279,23 +273,6 @@
                     </div>
                 `;
             });
-
-            // Appending Notice Card as the very last item inside the scrollable members list container (spanning 2 columns)
-            htmlContent += `
-                <div class="notice-card p-4 sm:p-5 rounded-2xl sm:rounded-3xl col-span-2 mt-1">
-                    <div class="flex items-center gap-2 mb-1.5">
-                        <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-amber-500/20 flex items-center justify-center border border-amber-500/50 shrink-0 shadow-inner">
-                            <i class="fas fa-bell text-amber-300 text-[9px] sm:text-[10px]"></i>
-                        </div>
-                        <h4 class="font-bold uppercase tracking-widest text-xs text-amber-300">Important Notice</h4>
-                    </div>
-                    <p class="text-xs leading-relaxed text-slate-200 opacity-95 font-medium dir-rtl text-right">
-                        تمام بھائیوں سے گزارش ہے کہ ہر مہینے کی 10 تاریخ تک اپنی پیمنٹ جمع کروا دیا کریں، تاکہ نہ سسٹم میں رکاوٹ آئے اور نہ ہی آپ پر بوجھ بڑھے۔ شکریہ۔
-                    </p>
-                </div>
-            `;
-
-            list.innerHTML = htmlContent;
         });
 
         function showHistory(name) {
