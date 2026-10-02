@@ -14,9 +14,11 @@
             font-family: 'Plus Jakarta Sans', sans-serif; 
             background-color: #011c14; 
             color: #f8fafc;
-            min-height: 100vh;
-            overflow-x: hidden;
+            height: 100vh;
+            overflow: hidden; /* Page ko fix kar diya taake poori screen scroll na ho */
             margin: 0;
+            display: flex;
+            flex-direction: column;
             -webkit-tap-highlight-color: transparent;
         }
 
@@ -129,10 +131,11 @@
             box-shadow: 0 0 10px #fbbf24;
         }
 
-        /* Custom Scrollbar */
+        /* Custom Scrollbar for Members List Only */
         .scroll-container {
             background: rgba(2, 44, 34, 0.6);
             border: 1px solid rgba(251, 191, 36, 0.2);
+            overflow-y: auto;
         }
 
         #members-list::-webkit-scrollbar { width: 4px; }
@@ -171,38 +174,38 @@
         }
     </style>
 </head>
-<body class="pb-8 relative antialiased selection:bg-amber-500 selection:text-black bg-ramzan-sky">
+<body class="relative antialiased selection:bg-amber-500 selection:text-black bg-ramzan-sky">
 
     <!-- Header with Moon & Stars Background Style -->
-    <header class="ramzan-header p-6 sm:p-8 pb-16 sm:pb-20 text-white rounded-b-[2rem] sm:rounded-b-[2.5rem] shadow-2xl text-center relative z-10 border-b border-amber-500/30">
-        <div class="inline-flex items-center gap-2 mb-2 px-3.5 py-1 rounded-full bg-emerald-950/90 border border-amber-500/40 text-[10px] font-mono tracking-widest text-amber-300 uppercase shadow-inner relative z-10">
+    <header class="ramzan-header p-5 sm:p-6 pb-12 sm:pb-16 text-white rounded-b-[2rem] sm:rounded-b-[2.5rem] shadow-2xl text-center relative z-10 border-b border-amber-500/30 shrink-0">
+        <div class="inline-flex items-center gap-2 mb-1.5 px-3.5 py-1 rounded-full bg-emerald-950/90 border border-amber-500/40 text-[10px] font-mono tracking-widest text-amber-300 uppercase shadow-inner relative z-10">
             <span class="pulse-dot"></span> Ramzan-ul-Mubarak Edition
         </div>
         <h1 class="text-xl sm:text-2xl font-black tracking-tight text-white leading-tight drop-shadow-md relative z-10">
             Family Trust & Care Foundation
         </h1>
-        <p class="inline-block mt-3 px-3.5 py-1.5 rounded-full text-amber-300 font-medium text-[11px] sm:text-xs tracking-wide bg-amber-500/10 border border-amber-400/30 backdrop-blur-xl max-w-[90%] shadow-lg relative z-10">
+        <p class="inline-block mt-2 px-3.5 py-1.5 rounded-full text-amber-300 font-medium text-[11px] sm:text-xs tracking-wide bg-amber-500/10 border border-amber-400/30 backdrop-blur-xl max-w-[90%] shadow-lg relative z-10">
             "Amanat me khiyanat nahi, Behtreen Nizam Asal Kamyabi"
         </p>
     </header>
 
-    <main class="w-full max-w-md mx-auto px-4 -mt-8 sm:-mt-10 space-y-5 sm:space-y-6 relative z-20">
+    <main class="w-full max-w-md mx-auto px-4 -mt-6 sm:-mt-8 space-y-4 sm:space-y-5 relative z-20 flex-1 flex flex-col justify-start pb-4 overflow-hidden">
         
-        <div class="total-card p-5 sm:p-6 rounded-2xl sm:rounded-3xl text-center backdrop-blur-xl">
+        <div class="total-card p-4 sm:p-5 rounded-2xl sm:rounded-3xl text-center backdrop-blur-xl shrink-0">
             <div class="flex items-center justify-center gap-2">
                 <i class="fas fa-moon text-amber-400 text-xs"></i>
                 <p class="text-[10px] font-bold uppercase tracking-[0.25em] text-amber-300 opacity-90">Total Contribution</p>
             </div>
-            <h2 id="grand-total" class="text-3xl sm:text-4xl font-black mt-2 text-white tracking-tight drop-shadow-sm">Rs. 0</h2>
-            <p id="last-updated" class="text-[9px] font-bold uppercase tracking-[0.15em] text-emerald-300 opacity-80 mt-2 font-mono"></p>
+            <h2 id="grand-total" class="text-2xl sm:text-3xl font-black mt-1.5 text-white tracking-tight drop-shadow-sm">Rs. 0</h2>
+            <p id="last-updated" class="text-[9px] font-bold uppercase tracking-[0.15em] text-emerald-300 opacity-80 mt-1 font-mono"></p>
         </div>
 
-        <section>
-            <div class="flex justify-between items-center mb-2.5 ml-1">
+        <section class="flex-1 flex flex-col min-h-0">
+            <div class="flex justify-between items-center mb-2 ml-1 shrink-0">
                 <h3 class="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-300/80">Members List</h3>
                 <span class="text-[9px] font-semibold text-emerald-300/60 uppercase tracking-wider">Tap for history</span>
             </div>
-            <div id="members-list" class="scroll-container grid grid-cols-2 gap-2.5 sm:gap-3 max-h-[300px] sm:max-h-[360px] overflow-y-auto p-2.5 sm:p-3 rounded-2xl sm:rounded-3xl backdrop-blur-xl"></div>
+            <div id="members-list" class="scroll-container grid grid-cols-2 gap-2.5 sm:gap-3 max-h-[190px] sm:max-h-[220px] overflow-y-auto p-2.5 sm:p-3 rounded-2xl sm:rounded-3xl backdrop-blur-xl"></div>
         </section>
 
         <!-- History Modal -->
@@ -218,19 +221,19 @@
             </div>
         </div>
 
-        <div class="notice-card p-4 sm:p-5 rounded-2xl sm:rounded-3xl">
-            <div class="flex items-center gap-2 mb-1.5">
-                <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-amber-500/20 flex items-center justify-center border border-amber-500/50 shrink-0 shadow-inner">
-                    <i class="fas fa-bell text-amber-300 text-[9px] sm:text-[10px]"></i>
+        <div class="notice-card p-3.5 sm:p-4 rounded-2xl sm:rounded-3xl shrink-0">
+            <div class="flex items-center gap-2 mb-1">
+                <div class="w-5 h-5 rounded-full bg-amber-500/20 flex items-center justify-center border border-amber-500/50 shrink-0 shadow-inner">
+                    <i class="fas fa-bell text-amber-300 text-[9px]"></i>
                 </div>
-                <h4 class="font-bold uppercase tracking-widest text-xs text-amber-300">Important Notice</h4>
+                <h4 class="font-bold uppercase tracking-widest text-[11px] text-amber-300">Important Notice</h4>
             </div>
-            <p class="text-xs leading-relaxed text-slate-200 opacity-95 font-medium dir-rtl text-right">
+            <p class="text-[11px] leading-relaxed text-slate-200 opacity-95 font-medium dir-rtl text-right">
                 تمام بھائیوں سے گزارش ہے کہ ہر مہینے کی 10 تاریخ تک اپنی پیمنٹ جمع کروا دیا کریں، تاکہ نہ سسٹم میں رکاوٹ آئے اور نہ ہی آپ پر بوجھ بڑھے۔ شکریہ۔
             </p>
         </div>
 
-        <div class="text-center opacity-60 text-[9px] font-bold uppercase tracking-[0.25em] pt-2 text-emerald-300 font-mono">
+        <div class="text-center opacity-60 text-[9px] font-bold uppercase tracking-[0.25em] pt-1 text-emerald-300 font-mono shrink-0">
             @FTCF2026 Founder Mughal Brothers
         </div>
     </main>
@@ -297,6 +300,7 @@
             } else {
                 container.innerHTML = '<p class="text-xs text-center text-slate-400 py-6">No records found.</p>';
             }
+            document.getElementById('modal').classList.add('flex');
             document.getElementById('modal').classList.remove('hidden');
         }
     </script>
