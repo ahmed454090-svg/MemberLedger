@@ -33,11 +33,11 @@
             position: absolute;
             inset: 0;
             background-image: 
-                radial-gradient(2px 2px at 20px 30px, #f1f5f9, rgba(0,0,0,0)),
-                radial-gradient(1.5px 1.5px at 45px 75px, #2dd4bf, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 95px 40px, #f1f5f9, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 20px 30px, #fde047, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 45px 75px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 95px 40px, #fde047, rgba(0,0,0,0)),
                 radial-gradient(1px 1px at 135px 85px, #ffffff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 170px 125px, #2dd4bf, rgba(0,0,0,0));
+                radial-gradient(2px 2px at 170px 125px, #fde047, rgba(0,0,0,0));
             background-repeat: repeat;
             background-size: 200px 200px;
             opacity: 0.4;
@@ -64,7 +64,7 @@
             right: -10px;
             top: -20px;
             font-size: 140px;
-            color: rgba(241, 245, 249, 0.04);
+            color: rgba(251, 191, 36, 0.05);
             transform: rotate(-15deg);
             pointer-events: none;
         }
@@ -77,7 +77,7 @@
             left: 20px;
             bottom: 15px;
             font-size: 24px;
-            color: rgba(45, 212, 191, 0.15);
+            color: rgba(253, 224, 71, 0.15);
             animation: starPulse 3s infinite alternate;
             pointer-events: none;
         }
@@ -87,20 +87,20 @@
             100% { opacity: 0.35; transform: scale(1.1); }
         }
 
-        /* Heavy Glassmorphism with Emerald Tint & Silver Borders */
+        /* Heavy Glassmorphism with Emerald Tint & Gold Borders */
         .glass-card {
             background: rgba(2, 44, 34, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(241, 245, 249, 0.2);
+            border: 1px solid rgba(251, 191, 36, 0.25);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
         }
 
         /* Glowing Total Card */
         .total-card {
             background: linear-gradient(135deg, rgba(6, 95, 70, 0.95) 0%, rgba(1, 28, 20, 0.98) 100%);
-            border: 1.5px solid rgba(45, 212, 191, 0.35);
-            box-shadow: 0 12px 35px -5px rgba(45, 212, 191, 0.25), inset 0 0 20px rgba(45, 212, 191, 0.1);
+            border: 1.5px solid rgba(251, 191, 36, 0.4);
+            box-shadow: 0 12px 35px -5px rgba(16, 185, 129, 0.35), inset 0 0 20px rgba(251, 191, 36, 0.15);
             position: relative;
             overflow: hidden;
         }
@@ -109,13 +109,13 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; height: 2px;
-            background: linear-gradient(90deg, transparent, rgba(45, 212, 191, 0.7), transparent);
+            background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.8), transparent);
         }
 
-        /* Notice Card Silver Tint */
+        /* Notice Card Ramzan Gold Tint */
         .notice-card {
-            background: linear-gradient(145deg, rgba(15, 118, 110, 0.2) 0%, rgba(2, 44, 34, 0.4) 100%);
-            border: 1px solid rgba(241, 245, 249, 0.25);
+            background: linear-gradient(145deg, rgba(146, 64, 14, 0.25) 0%, rgba(69, 26, 3, 0.45) 100%);
+            border: 1px solid rgba(251, 191, 36, 0.35);
             position: relative;
             overflow: hidden;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
@@ -125,32 +125,32 @@
             content: '';
             position: absolute;
             top: 0; left: 0; width: 4.5px; height: 100%;
-            background: #2dd4bf;
-            box-shadow: 0 0 10px #2dd4bf;
+            background: #fbbf24;
+            box-shadow: 0 0 10px #fbbf24;
         }
 
         /* Custom Scrollbar */
         .scroll-container {
             background: rgba(2, 44, 34, 0.6);
-            border: 1px solid rgba(241, 245, 249, 0.15);
+            border: 1px solid rgba(251, 191, 36, 0.2);
         }
 
         #members-list::-webkit-scrollbar { width: 4px; }
-        #members-list::-webkit-scrollbar-thumb { background: rgba(241, 245, 249, 0.3); border-radius: 10px; }
+        #members-list::-webkit-scrollbar-thumb { background: rgba(251, 191, 36, 0.4); border-radius: 10px; }
 
         /* Card Interactive Hover Effects */
         .member-item {
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             background: rgba(2, 44, 34, 0.75);
-            border: 1px solid rgba(45, 212, 191, 0.2);
+            border: 1px solid rgba(16, 185, 129, 0.25);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
         .member-item:hover {
             transform: translateY(-3px) scale(1.01);
-            border-color: rgba(45, 212, 191, 0.6);
-            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.6), 0 0 18px rgba(45, 212, 191, 0.25);
+            border-color: rgba(251, 191, 36, 0.7);
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.6), 0 0 18px rgba(251, 191, 36, 0.3);
             background: rgba(6, 78, 59, 0.95);
         }
 
@@ -158,30 +158,30 @@
         .pulse-dot {
             width: 7px;
             height: 7px;
-            background-color: #2dd4bf;
+            background-color: #fbbf24;
             border-radius: 50%;
-            box-shadow: 0 0 10px #2dd4bf;
+            box-shadow: 0 0 10px #fbbf24;
             animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.8); }
-            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(45, 212, 191, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(45, 212, 191, 0); }
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.8); }
+            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(251, 191, 36, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(251, 191, 36, 0); }
         }
     </style>
 </head>
-<body class="pb-8 relative antialiased selection:bg-teal-500 selection:text-black bg-ramzan-sky">
+<body class="pb-8 relative antialiased selection:bg-amber-500 selection:text-black bg-ramzan-sky">
 
     <!-- Header with Moon & Stars Background Style -->
-    <header class="ramzan-header p-6 sm:p-8 pb-16 sm:pb-20 text-white rounded-b-[2rem] sm:rounded-b-[2.5rem] shadow-2xl text-center relative z-10 border-b border-teal-500/30">
-        <div class="inline-flex items-center gap-2 mb-2 px-3.5 py-1 rounded-full bg-emerald-950/90 border border-teal-500/40 text-[10px] font-mono tracking-widest text-teal-300 uppercase shadow-inner relative z-10">
+    <header class="ramzan-header p-6 sm:p-8 pb-16 sm:pb-20 text-white rounded-b-[2rem] sm:rounded-b-[2.5rem] shadow-2xl text-center relative z-10 border-b border-amber-500/30">
+        <div class="inline-flex items-center gap-2 mb-2 px-3.5 py-1 rounded-full bg-emerald-950/90 border border-amber-500/40 text-[10px] font-mono tracking-widest text-amber-300 uppercase shadow-inner relative z-10">
             <span class="pulse-dot"></span> Ramzan-ul-Mubarak Edition
         </div>
         <h1 class="text-xl sm:text-2xl font-black tracking-tight text-white leading-tight drop-shadow-md relative z-10">
             Family Trust & Care Foundation
         </h1>
-        <p class="inline-block mt-3 px-3.5 py-1.5 rounded-full text-slate-200 font-medium text-[11px] sm:text-xs tracking-wide bg-teal-500/10 border border-teal-400/30 backdrop-blur-xl max-w-[90%] shadow-lg relative z-10">
+        <p class="inline-block mt-3 px-3.5 py-1.5 rounded-full text-amber-300 font-medium text-[11px] sm:text-xs tracking-wide bg-amber-500/10 border border-amber-400/30 backdrop-blur-xl max-w-[90%] shadow-lg relative z-10">
             "Amanat me khiyanat nahi, Behtreen Nizam Asal Kamyabi"
         </p>
     </header>
@@ -190,27 +190,27 @@
         
         <div class="total-card p-5 sm:p-6 rounded-2xl sm:rounded-3xl text-center backdrop-blur-xl">
             <div class="flex items-center justify-center gap-2">
-                <i class="fas fa-moon text-teal-300 text-xs"></i>
-                <p class="text-[10px] font-bold uppercase tracking-[0.25em] text-teal-300 opacity-90">Total Contribution</p>
+                <i class="fas fa-moon text-amber-400 text-xs"></i>
+                <p class="text-[10px] font-bold uppercase tracking-[0.25em] text-amber-300 opacity-90">Total Contribution</p>
             </div>
             <h2 id="grand-total" class="text-3xl sm:text-4xl font-black mt-2 text-white tracking-tight drop-shadow-sm">Rs. 0</h2>
-            <p id="last-updated" class="text-[9px] font-bold uppercase tracking-[0.15em] text-slate-300 opacity-80 mt-2 font-mono"></p>
+            <p id="last-updated" class="text-[9px] font-bold uppercase tracking-[0.15em] text-emerald-300 opacity-80 mt-2 font-mono"></p>
         </div>
 
         <section>
             <div class="flex justify-between items-center mb-2.5 ml-1">
-                <h3 class="text-[10px] font-bold uppercase tracking-[0.2em] text-teal-300/80">Members List</h3>
-                <span class="text-[9px] font-semibold text-slate-400 uppercase tracking-wider">Tap for history</span>
+                <h3 class="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-300/80">Members List</h3>
+                <span class="text-[9px] font-semibold text-emerald-300/60 uppercase tracking-wider">Tap for history</span>
             </div>
             <div id="members-list" class="scroll-container grid grid-cols-2 gap-2.5 sm:gap-3 max-h-[300px] sm:max-h-[360px] overflow-y-auto p-2.5 sm:p-3 rounded-2xl sm:rounded-3xl backdrop-blur-xl"></div>
         </section>
 
         <!-- History Modal -->
         <div id="modal" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4 z-50 transition-all duration-300">
-            <div class="glass-card p-5 sm:p-6 rounded-2xl sm:rounded-3xl w-full max-w-xs sm:max-w-sm max-h-[75vh] flex flex-col border border-teal-500/40 shadow-2xl relative">
-                <div class="flex justify-between items-center mb-3 pb-2.5 border-b border-teal-500/30">
-                    <h3 id="modal-name" class="font-bold text-teal-300 text-xs sm:text-sm tracking-wide truncate pr-2"></h3>
-                    <button onclick="triggerVibrate(20); document.getElementById('modal').classList.add('hidden')" class="w-7 h-7 rounded-full bg-emerald-950 text-teal-300 hover:text-white flex items-center justify-center shrink-0 transition-all border border-teal-500/40 shadow-inner">
+            <div class="glass-card p-5 sm:p-6 rounded-2xl sm:rounded-3xl w-full max-w-xs sm:max-w-sm max-h-[75vh] flex flex-col border border-amber-500/40 shadow-2xl relative">
+                <div class="flex justify-between items-center mb-3 pb-2.5 border-b border-amber-500/30">
+                    <h3 id="modal-name" class="font-bold text-amber-200 text-xs sm:text-sm tracking-wide truncate pr-2"></h3>
+                    <button onclick="triggerVibrate(20); document.getElementById('modal').classList.add('hidden')" class="w-7 h-7 rounded-full bg-emerald-950 text-amber-400 hover:text-white flex items-center justify-center shrink-0 transition-all border border-amber-500/40 shadow-inner">
                         <i class="fas fa-times text-xs"></i>
                     </button>
                 </div>
@@ -220,17 +220,17 @@
 
         <div class="notice-card p-4 sm:p-5 rounded-2xl sm:rounded-3xl">
             <div class="flex items-center gap-2 mb-1.5">
-                <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-teal-500/20 flex items-center justify-center border border-teal-500/50 shrink-0 shadow-inner">
-                    <i class="fas fa-bell text-teal-300 text-[9px] sm:text-[10px]"></i>
+                <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-amber-500/20 flex items-center justify-center border border-amber-500/50 shrink-0 shadow-inner">
+                    <i class="fas fa-bell text-amber-300 text-[9px] sm:text-[10px]"></i>
                 </div>
-                <h4 class="font-bold uppercase tracking-widest text-xs text-teal-300">Important Notice</h4>
+                <h4 class="font-bold uppercase tracking-widest text-xs text-amber-300">Important Notice</h4>
             </div>
             <p class="text-xs leading-relaxed text-slate-200 opacity-95 font-medium dir-rtl text-right">
-                تمام بھائیوں سے گزارش ہے کہ ہر مہینے کی 10 تاریخ تک اپنی پیمنٹ جمع کروا دیا کریں، تاکہ نہ سسٹم میں رکاوٹ آئے اور نہ ہی آپ پر بوجھ بڑھے۔ شکریہ।
+                تمام بھائیوں سے گزارش ہے کہ ہر مہینے کی 10 تاریخ تک اپنی پیمنٹ جمع کروا دیا کریں، تاکہ نہ سسٹم میں رکاوٹ آئے اور نہ ہی آپ پر بوجھ بڑھے۔ شکریہ۔
             </p>
         </div>
 
-        <div class="text-center opacity-60 text-[9px] font-bold uppercase tracking-[0.25em] pt-2 text-slate-400 font-mono">
+        <div class="text-center opacity-60 text-[9px] font-bold uppercase tracking-[0.25em] pt-2 text-emerald-300 font-mono">
             @FTCF2026 Founder Mughal Brothers
         </div>
     </main>
@@ -244,7 +244,7 @@
         }
 
         const mainSheet = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTtsZyNI2Ss1ACTIO7X1zAND4Q-mGhFdKSVcvx8amNxfGsFQfA2A7kBLHJgTJ9DGECqNNZ40iHW7zDc/pub?output=csv';
-        const historySheet = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTtsZyNI2Ss1ACTIO7X1zAND4Q-mGhFdKSVcvx8amNxfGsFQfA2A7kBLHNw2DGECqNNZ40iHW7zDc/pub?gid=2038080316&single=true&output=csv';
+        const historySheet = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTtsZyNI2Ss1ACTIO7X1zAND4Q-mGhFdKSVcvx8amNxfGsFQfA2A7kBLHJgTJ9DGECqNNZ40iHW7zDc/pub?gid=2038080316&single=true&output=csv';
         
         let historyData = [];
 
@@ -253,7 +253,7 @@
             fetch(historySheet).then(res => res.text())
         ]).then(([mainCsv, historyCsv]) => {
             const main = Papa.parse(mainCsv, {header: true, dynamicTyping: true}).data.filter(m => m.name);
-            historyData = Papa.parse(historyCsv, {header: false, dynamicTyping: true}).data;
+            historyData = Papa.parse(historyCsv, {header: true, dynamicTyping: true}).data;
 
             let grandTotal = main.reduce((sum, m) => sum + (m.fund || 0), 0);
             document.getElementById('grand-total').innerText = "Rs. " + grandTotal.toLocaleString();
@@ -262,13 +262,13 @@
 
             const list = document.getElementById('members-list');
             main.forEach(m => {
-                const profilePic = m.photo || `https://ui-avatars.com/api/?name=${encodeURIComponent(m.name)}&background=022c22&color=2dd4bf`;
+                const profilePic = m.photo || `https://ui-avatars.com/api/?name=${encodeURIComponent(m.name)}&background=022c22&color=fbbf24`;
                 list.innerHTML += `
                     <div onclick="triggerVibrate(30); showHistory('${m.name}')" class="member-item p-2.5 rounded-xl sm:rounded-2xl flex items-center gap-2.5 cursor-pointer group min-w-0">
-                        <img src="${profilePic}" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover ring-2 ring-teal-500/40 group-hover:ring-teal-400 transition-all duration-300 shrink-0">
+                        <img src="${profilePic}" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover ring-2 ring-amber-500/40 group-hover:ring-amber-400 transition-all duration-300 shrink-0">
                         <div class="overflow-hidden min-w-0">
-                            <p class="text-[10px] font-bold text-slate-100 uppercase tracking-wide truncate group-hover:text-teal-300 transition-colors">${m.name}</p>
-                            <p class="text-[10px] font-black text-teal-300 mt-0.5 truncate">Rs. ${m.fund.toLocaleString()}</p>
+                            <p class="text-[10px] font-bold text-slate-100 uppercase tracking-wide truncate group-hover:text-amber-300 transition-colors">${m.name}</p>
+                            <p class="text-[10px] font-black text-amber-400 mt-0.5 truncate">Rs. ${m.fund.toLocaleString()}</p>
                         </div>
                     </div>
                 `;
@@ -278,7 +278,7 @@
         function showHistory(name) {
             const memberHistory = historyData.filter(row => {
                 const values = Object.values(row);
-                return values[0] && values[0].toString().trim().toLowerCase() === name.trim().toLowerCase();
+                return values[0] && values[0].toString().trim() === name.trim();
             });
             
             const container = document.getElementById('history-data');
@@ -288,9 +288,9 @@
                 container.innerHTML = memberHistory.map(row => {
                     const values = Object.values(row);
                     return `
-                        <div class="flex justify-between items-center text-xs border-b border-teal-500/10 pb-2 pt-1 text-slate-300">
+                        <div class="flex justify-between items-center text-xs border-b border-amber-500/10 pb-2 pt-1 text-slate-300">
                             <span class="opacity-80 font-medium truncate pr-2">${values[1] || 'N/A'}</span>
-                            <span class="font-bold text-teal-300 bg-emerald-950 px-2.5 py-0.5 rounded-full border border-teal-500/40 shrink-0 shadow-inner">Rs. ${values[2] ? parseInt(values[2]).toLocaleString() : 0}</span>
+                            <span class="font-bold text-amber-300 bg-emerald-950 px-2.5 py-0.5 rounded-full border border-amber-500/40 shrink-0 shadow-inner">Rs. ${values[2] ? parseInt(values[2]).toLocaleString() : 0}</span>
                         </div>
                     `;
                 }).join('');
