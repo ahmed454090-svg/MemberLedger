@@ -226,7 +226,7 @@
                 <h4 class="font-bold uppercase tracking-widest text-xs text-teal-300">Important Notice</h4>
             </div>
             <p class="text-xs leading-relaxed text-slate-200 opacity-95 font-medium dir-rtl text-right">
-                تمام بھائیوں سے گزارش ہے کہ ہر مہینے کی 10 تاریخ تک اپنی پیمنٹ جمع کروا دیا کریں، تاکہ نہ سسٹم میں رکاوٹ آئے اور نہ ہی آپ پر بوجھ بڑھے۔ شکریہ۔
+                تمام بھائیوں سے گزارش ہے کہ ہر مہینے کی 10 تاریخ تک اپنی پیمنٹ جمع کروا دیا کریں، تاکہ نہ سسٹم میں رکاوٹ آئے اور نہ ہی آپ پر بوجھ بڑھے۔ شکریہ।
             </p>
         </div>
 
@@ -244,7 +244,7 @@
         }
 
         const mainSheet = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTtsZyNI2Ss1ACTIO7X1zAND4Q-mGhFdKSVcvx8amNxfGsFQfA2A7kBLHJgTJ9DGECqNNZ40iHW7zDc/pub?output=csv';
-        const historySheet = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTtsZyNI2Ss1ACTIO7X1zAND4Q-mGhFdKSVcvx8amNxfGsFQfA2A7kBLHJgTJ9DGECqNNZ40iHW7zDc/pub?gid=2038080316&single=true&output=csv';
+        const historySheet = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTtsZyNI2Ss1ACTIO7X1zAND4Q-mGhFdKSVcvx8amNxfGsFQfA2A7kBLHNw2DGECqNNZ40iHW7zDc/pub?gid=2038080316&single=true&output=csv';
         
         let historyData = [];
 
@@ -253,7 +253,7 @@
             fetch(historySheet).then(res => res.text())
         ]).then(([mainCsv, historyCsv]) => {
             const main = Papa.parse(mainCsv, {header: true, dynamicTyping: true}).data.filter(m => m.name);
-            historyData = Papa.parse(historyCsv, {header: true, dynamicTyping: true}).data;
+            historyData = Papa.parse(historyCsv, {header: false, dynamicTyping: true}).data;
 
             let grandTotal = main.reduce((sum, m) => sum + (m.fund || 0), 0);
             document.getElementById('grand-total').innerText = "Rs. " + grandTotal.toLocaleString();
@@ -278,7 +278,7 @@
         function showHistory(name) {
             const memberHistory = historyData.filter(row => {
                 const values = Object.values(row);
-                return values[0] && values[0].toString().trim() === name.trim();
+                return values[0] && values[0].toString().trim().toLowerCase() === name.trim().toLowerCase();
             });
             
             const container = document.getElementById('history-data');
@@ -297,7 +297,7 @@
             } else {
                 container.innerHTML = '<p class="text-xs text-center text-slate-400 py-6">No records found.</p>';
             }
-            document.getElementById('modal').classList.add('hidden');
+            document.getElementById('modal').classList.remove('hidden');
         }
     </script>
 </body>
